@@ -3,6 +3,7 @@ package com.metatradetools.backtest.models.trades;
 import org.jetbrains.annotations.Nullable;
 
 import java.beans.JavaBean;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 /**
@@ -24,7 +25,7 @@ public class Trade {
 	/**
 	 * The date and time that the execution occurs.
 	 */
-	private Date time;
+	private ZonedDateTime time;
 	
 	/**
 	 * The type of execution.
@@ -94,7 +95,7 @@ public class Trade {
 	 * @return the date and time the execution took place
 	 * @see #time
 	 */
-	public Date getTime () {
+	public ZonedDateTime getTime () {
 		return time;
 	}
 	
@@ -104,7 +105,7 @@ public class Trade {
 	 * @see #time
 	 * @see #getTime()
 	 */
-	public void setTime (Date time) {
+	public void setTime (ZonedDateTime time) {
 		this.time = time;
 	}
 	

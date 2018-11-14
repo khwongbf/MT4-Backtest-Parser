@@ -10,13 +10,12 @@ import org.jsoup.select.Elements;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+
 
 /**
  *  A parser service that provides parsing methods between various formats and the {@link Backtest} object.
@@ -29,6 +28,8 @@ public class BacktestParser {
 	
 	private static final String STYLE_EXPERT = "font: 16pt Times New Roman";
 	private static final String STYLE_SERVER_NAME = "font: 10pt Times New Roman";
+
+	private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
 	
 	/**
 	 * Parses a given .htm file to a new {@link Backtest} object.
@@ -82,7 +83,7 @@ public class BacktestParser {
 							String timeframe = retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf(")")).trim();
 							String dates = retrievedString.substring(retrievedString.indexOf(")") + 1, retrievedString.lastIndexOf("(")).trim();
 							String startDateInStr = dates.split("-")[0].trim();
-							DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
+
 							LocalDateTime startDate = LocalDateTime.parse(startDateInStr,dateTimeFormatter);
 							String endDateInStr = dates.split("-")[1].trim();
 							LocalDateTime endDate = LocalDateTime.parse(endDateInStr,dateTimeFormatter);
@@ -218,8 +219,8 @@ public class BacktestParser {
 								trade.setId(Integer.parseInt(processingString));
 								break;
 							case 1:
-								SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
-								trade.setTime(simpleDateFormat.parse(processingString));
+								LocalDateTime localDateTime = LocalDateTime.parse(processingString,dateTimeFormatter);
+								trade.setTime(ZonedDateTime.ofInstant(localDateTime,ZoneOffset.ofHours(2),ZoneId.of("Europe/Nicosia")));
 								break;
 							case 2:
 								trade.setType(processingString);
@@ -263,12 +264,7 @@ public class BacktestParser {
 					backtest.getTrades().add(trade);
 				}
 			}
-		} catch (ParseException e) {
-			e.printStackTrace();
-			System.out.println("Invalid Date Format Detected!!!");
-			backtest = null;
-			
-		} catch (IOException e) {
+		}catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("IO Exception thrown");
 			backtest = null;
