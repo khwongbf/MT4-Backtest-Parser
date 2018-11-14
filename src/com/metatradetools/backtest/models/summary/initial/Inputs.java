@@ -20,7 +20,6 @@ public class Inputs {
 	 * The symbol of the trading instrument.
 	 */
 	private String symbol;
-	
 	/**
 	 * The time frame used, in the vocabulary of traders.
 	 * <p>This field represents the time frame of each candlestick in a candlestick chart, which is commonly used in trading in financial markets</p>
@@ -39,7 +38,6 @@ public class Inputs {
 	 * </p>
 	 */
 	private String timeframe;
-	
 	/**
 	 * The starting date of the historical strategy test.
 	 */
@@ -48,22 +46,18 @@ public class Inputs {
 	 * The end date of the historical strategy test.
 	 */
 	private GregorianCalendar endDate = new GregorianCalendar(new SimpleTimeZone(3600000*2, "ForexUS", Calendar.MARCH, 2, Calendar.SUNDAY, 0, Calendar.NOVEMBER, 1, Calendar.SUNDAY, 3600000));
-	
 	/**
 	 * The frequency of tick used, using descriptions
 	 */
 	private String model;
-	
 	/**
 	 * The parameters used in the expert advisor, as a string
 	 */
 	private String parameters;
-	
 	/**
 	 * The initial deposit of the account for the strategy testing on historic data.
 	 */
 	private double initialDeposit;
-	
 	/**
 	 * The bid-ask spread used in the strategy test
 	 */
