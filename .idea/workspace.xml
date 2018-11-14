@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4a5d804-36d9-4148-b5c9-e513437d71e8" name="Default Changelist" comment="" />
+    <list default="true" id="b4a5d804-36d9-4148-b5c9-e513437d71e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/trades/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/metatradetools/backtest/models/trades/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/metatradetools/backtest/parsers/BacktestParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/metatradetools/backtest/parsers/BacktestParser.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,34 +22,37 @@
     <session id="-146489423">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="45" />
+          <entry key="gitignore" value="1" />
+          <entry key="java" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="45" />
+          <entry key="Git file" value="1" />
+          <entry key="JAVA" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="36" />
-          <entry key="java" value="8181" />
+          <entry key="java" value="16597" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8181" />
+          <entry key="JAVA" value="16597" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -48,11 +60,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="72">
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+              <folding>
+                <element signature="docComment;class#Environment#0" expanded="true" />
+                <element signature="docComment;field#expert#0;class#Environment#0" expanded="true" />
+                <element signature="docComment;field#serverName#0;class#Environment#0" expanded="true" />
+                <element signature="docComment;method#getExpert#0;class#Environment#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
+                <element signature="e#766#767#0" expanded="true" />
+                <element signature="docComment;method#setExpert#0;class#Environment#0" expanded="true" />
+                <element signature="e#954#955#0" expanded="true" />
+                <element signature="e#981#982#0" expanded="true" />
+                <element signature="e#1192#1193#0" expanded="true" />
+                <element signature="e#1216#1217#0" expanded="true" />
+                <element signature="docComment;method#setServerName#0;class#Environment#0" expanded="true" />
+                <element signature="e#1267#1268#0" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,25 +88,163 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/parsers/BacktestParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+            <state relative-caret-position="334">
+              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#BacktestParser#0" expanded="true" />
-                <element signature="method#parseFileToBacktest#0;class#BacktestParser#0" expanded="true" />
+                <element signature="docComment;method#parseFileToBacktest#0;class#BacktestParser#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Inputs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="19">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Backtest#0" expanded="true" />
+                <element signature="docComment;field#summary#0;class#Backtest#0" expanded="true" />
+                <element signature="docComment;field#trades#0;class#Backtest#0" expanded="true" />
+                <element signature="docComment;method#getSummary#0;class#Backtest#0" expanded="true" />
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
+                <element signature="docComment;method#getTrades#0;class#Backtest#0" expanded="true" />
+                <element signature="e#965#966#0" expanded="true" />
+                <element signature="e#985#986#0" expanded="true" />
                 <element signature="method#toString#0;class#Backtest#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/trades/Trade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-23">
+              <caret line="281" column="7" lean-forward="true" selection-start-line="281" selection-start-column="7" selection-end-line="281" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#id#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#time#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#type#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#order_id#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#size#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#price#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#stopLoss#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#takeProfit#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#profit#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;field#balance#0;class#Trade#0" expanded="true" />
+                <element signature="docComment;method#getId#0;class#Trade#0" expanded="true" />
+                <element signature="e#1513#1514#0" expanded="true" />
+                <element signature="e#1529#1530#0" expanded="true" />
+                <element signature="docComment;method#setId#0;class#Trade#0" expanded="true" />
+                <element signature="e#1668#1669#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+                <element signature="docComment;method#getTime#0;class#Trade#0" expanded="true" />
+                <element signature="e#1715#1716#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
+                <element signature="docComment;method#setTime#0;class#Trade#0" expanded="true" />
+                <element signature="e#1770#1771#0" expanded="true" />
+                <element signature="e#1793#1794#0" expanded="true" />
+                <element signature="docComment;method#getType#0;class#Trade#0" expanded="true" />
+                <element signature="e#2227#2228#0" expanded="true" />
+                <element signature="e#2245#2246#0" expanded="true" />
+                <element signature="docComment;method#setType#0;class#Trade#0" expanded="true" />
+                <element signature="e#2888#2889#0" expanded="true" />
+                <element signature="e#2911#2912#0" expanded="true" />
+                <element signature="docComment;method#getOrder_id#0;class#Trade#0" expanded="true" />
+                <element signature="e#2942#2943#0" expanded="true" />
+                <element signature="e#2964#2965#0" expanded="true" />
+                <element signature="docComment;method#setOrder_id#0;class#Trade#0" expanded="true" />
+                <element signature="e#3008#3009#0" expanded="true" />
+                <element signature="e#3039#3040#0" expanded="true" />
+                <element signature="docComment;method#getSize#0;class#Trade#0" expanded="true" />
+                <element signature="e#3069#3070#0" expanded="true" />
+                <element signature="e#3087#3088#0" expanded="true" />
+                <element signature="docComment;method#setSize#0;class#Trade#0" expanded="true" />
+                <element signature="e#3924#3925#0" expanded="true" />
+                <element signature="e#3947#3948#0" expanded="true" />
+                <element signature="docComment;method#getPrice#0;class#Trade#0" expanded="true" />
+                <element signature="e#4369#4370#0" expanded="true" />
+                <element signature="e#4388#4389#0" expanded="true" />
+                <element signature="docComment;method#setPrice#0;class#Trade#0" expanded="true" />
+                <element signature="e#4429#4430#0" expanded="true" />
+                <element signature="e#4454#4455#0" expanded="true" />
+                <element signature="docComment;method#getStopLoss#0;class#Trade#0" expanded="true" />
+                <element signature="e#4488#4489#0" expanded="true" />
+                <element signature="e#4510#4511#0" expanded="true" />
+                <element signature="docComment;method#setStopLoss#0;class#Trade#0" expanded="true" />
+                <element signature="e#4567#4568#0" expanded="true" />
+                <element signature="e#4598#4599#0" expanded="true" />
+                <element signature="docComment;method#getTakeProfit#0;class#Trade#0" expanded="true" />
+                <element signature="e#4634#4635#0" expanded="true" />
+                <element signature="e#4658#4659#0" expanded="true" />
+                <element signature="docComment;method#setTakeProfit#0;class#Trade#0" expanded="true" />
+                <element signature="e#4719#4720#0" expanded="true" />
+                <element signature="e#4754#4755#0" expanded="true" />
+                <element signature="docComment;method#getProfit#0;class#Trade#0" expanded="true" />
+                <element signature="e#4786#4787#0" expanded="true" />
+                <element signature="e#4806#4807#0" expanded="true" />
+                <element signature="docComment;method#setProfit#0;class#Trade#0" expanded="true" />
+                <element signature="e#4859#4860#0" expanded="true" />
+                <element signature="e#4886#4887#0" expanded="true" />
+                <element signature="docComment;method#getBalance#0;class#Trade#0" expanded="true" />
+                <element signature="e#6595#6596#0" expanded="true" />
+                <element signature="e#6616#6617#0" expanded="true" />
+                <element signature="docComment;method#setBalance#0;class#Trade#0" expanded="true" />
+                <element signature="e#6671#6672#0" expanded="true" />
+                <element signature="e#6700#6701#0" expanded="true" />
+                <element signature="method#toString#0;class#Trade#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;field#modelling#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="docComment;field#environment#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="docComment;field#inputs#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="docComment;field#result#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="docComment;method#getModelling#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="e#1439#1440#0" expanded="true" />
+                <element signature="e#1462#1463#0" expanded="true" />
+                <element signature="docComment;method#getEnvironment#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="e#1504#1505#0" expanded="true" />
+                <element signature="e#1529#1530#0" expanded="true" />
+                <element signature="docComment;method#getInputs#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="e#1561#1562#0" expanded="true" />
+                <element signature="e#1581#1582#0" expanded="true" />
+                <element signature="docComment;method#getResult#0;class#BacktestSummary#0" expanded="true" />
+                <element signature="e#1613#1614#0" expanded="true" />
+                <element signature="e#1633#1634#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,6 +295,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -146,14 +315,15 @@
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/result/detail/miscellaneous/MaximumsByCount.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/result/detail/miscellaneous/MaximumsByMoney.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Inputs.java" />
-        <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/chart/Modelling.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/result/Result.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/trades/Trade.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/parsers/BacktestParser.java" />
         <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java" />
+        <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java" />
+        <option value="$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java" />
       </list>
     </option>
   </component>
@@ -163,7 +333,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="216" />
     <option name="y" value="105" />
     <option name="width" value="1614" />
@@ -174,8 +344,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -215,6 +383,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="metatradetools" type="462c0819:PsiDirectoryNode" />
               <item name="backtest" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="summary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backtest Parsing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backtest Parsing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="metatradetools" type="462c0819:PsiDirectoryNode" />
+              <item name="backtest" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="summary" type="462c0819:PsiDirectoryNode" />
+              <item name="initial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backtest Parsing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backtest Parsing" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="metatradetools" type="462c0819:PsiDirectoryNode" />
+              <item name="backtest" type="462c0819:PsiDirectoryNode" />
               <item name="parsers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -229,6 +416,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -236,7 +425,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541954315063" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542010763703" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Java libs/jsoup-1.11.3.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -308,7 +497,7 @@
     <frame x="-7" y="-7" width="1295" height="697" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26596606" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27405012" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -324,7 +513,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32902032" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32902032" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -424,20 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/trades/Trade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="109" column="18" selection-start-line="109" selection-start-column="18" selection-end-line="109" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Inputs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/result/detail/miscellaneous/AveragesByMoney.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -445,42 +620,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#684#685#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="e#736#737#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/parsers/BacktestParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="40" column="53" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#BacktestParser#0" expanded="true" />
-            <element signature="method#parseFileToBacktest#0;class#BacktestParser#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/metatradetools/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -512,13 +653,175 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/trades/Trade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="-23">
+          <caret line="281" column="7" lean-forward="true" selection-start-line="281" selection-start-column="7" selection-end-line="281" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#id#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#time#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#type#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#order_id#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#size#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#price#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#stopLoss#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#takeProfit#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#profit#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;field#balance#0;class#Trade#0" expanded="true" />
+            <element signature="docComment;method#getId#0;class#Trade#0" expanded="true" />
+            <element signature="e#1513#1514#0" expanded="true" />
+            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="docComment;method#setId#0;class#Trade#0" expanded="true" />
+            <element signature="e#1668#1669#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+            <element signature="docComment;method#getTime#0;class#Trade#0" expanded="true" />
+            <element signature="e#1715#1716#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="docComment;method#setTime#0;class#Trade#0" expanded="true" />
+            <element signature="e#1770#1771#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+            <element signature="docComment;method#getType#0;class#Trade#0" expanded="true" />
+            <element signature="e#2227#2228#0" expanded="true" />
+            <element signature="e#2245#2246#0" expanded="true" />
+            <element signature="docComment;method#setType#0;class#Trade#0" expanded="true" />
+            <element signature="e#2888#2889#0" expanded="true" />
+            <element signature="e#2911#2912#0" expanded="true" />
+            <element signature="docComment;method#getOrder_id#0;class#Trade#0" expanded="true" />
+            <element signature="e#2942#2943#0" expanded="true" />
+            <element signature="e#2964#2965#0" expanded="true" />
+            <element signature="docComment;method#setOrder_id#0;class#Trade#0" expanded="true" />
+            <element signature="e#3008#3009#0" expanded="true" />
+            <element signature="e#3039#3040#0" expanded="true" />
+            <element signature="docComment;method#getSize#0;class#Trade#0" expanded="true" />
+            <element signature="e#3069#3070#0" expanded="true" />
+            <element signature="e#3087#3088#0" expanded="true" />
+            <element signature="docComment;method#setSize#0;class#Trade#0" expanded="true" />
+            <element signature="e#3924#3925#0" expanded="true" />
+            <element signature="e#3947#3948#0" expanded="true" />
+            <element signature="docComment;method#getPrice#0;class#Trade#0" expanded="true" />
+            <element signature="e#4369#4370#0" expanded="true" />
+            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="docComment;method#setPrice#0;class#Trade#0" expanded="true" />
+            <element signature="e#4429#4430#0" expanded="true" />
+            <element signature="e#4454#4455#0" expanded="true" />
+            <element signature="docComment;method#getStopLoss#0;class#Trade#0" expanded="true" />
+            <element signature="e#4488#4489#0" expanded="true" />
+            <element signature="e#4510#4511#0" expanded="true" />
+            <element signature="docComment;method#setStopLoss#0;class#Trade#0" expanded="true" />
+            <element signature="e#4567#4568#0" expanded="true" />
+            <element signature="e#4598#4599#0" expanded="true" />
+            <element signature="docComment;method#getTakeProfit#0;class#Trade#0" expanded="true" />
+            <element signature="e#4634#4635#0" expanded="true" />
+            <element signature="e#4658#4659#0" expanded="true" />
+            <element signature="docComment;method#setTakeProfit#0;class#Trade#0" expanded="true" />
+            <element signature="e#4719#4720#0" expanded="true" />
+            <element signature="e#4754#4755#0" expanded="true" />
+            <element signature="docComment;method#getProfit#0;class#Trade#0" expanded="true" />
+            <element signature="e#4786#4787#0" expanded="true" />
+            <element signature="e#4806#4807#0" expanded="true" />
+            <element signature="docComment;method#setProfit#0;class#Trade#0" expanded="true" />
+            <element signature="e#4859#4860#0" expanded="true" />
+            <element signature="e#4886#4887#0" expanded="true" />
+            <element signature="docComment;method#getBalance#0;class#Trade#0" expanded="true" />
+            <element signature="e#6595#6596#0" expanded="true" />
+            <element signature="e#6616#6617#0" expanded="true" />
+            <element signature="docComment;method#setBalance#0;class#Trade#0" expanded="true" />
+            <element signature="e#6671#6672#0" expanded="true" />
+            <element signature="e#6700#6701#0" expanded="true" />
+            <element signature="method#toString#0;class#Trade#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/Backtest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Backtest#0" expanded="true" />
+            <element signature="docComment;field#summary#0;class#Backtest#0" expanded="true" />
+            <element signature="docComment;field#trades#0;class#Backtest#0" expanded="true" />
+            <element signature="docComment;method#getSummary#0;class#Backtest#0" expanded="true" />
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="docComment;method#getTrades#0;class#Backtest#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#985#986#0" expanded="true" />
             <element signature="method#toString#0;class#Backtest#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/parsers/BacktestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#BacktestParser#0" expanded="true" />
+            <element signature="docComment;method#parseFileToBacktest#0;class#BacktestParser#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Inputs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/BacktestSummary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;field#modelling#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="docComment;field#environment#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="docComment;field#inputs#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="docComment;field#result#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="docComment;method#getModelling#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="docComment;method#getEnvironment#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="e#1504#1505#0" expanded="true" />
+            <element signature="e#1529#1530#0" expanded="true" />
+            <element signature="docComment;method#getInputs#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="docComment;method#getResult#0;class#BacktestSummary#0" expanded="true" />
+            <element signature="e#1613#1614#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/metatradetools/backtest/models/summary/initial/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+          <folding>
+            <element signature="docComment;class#Environment#0" expanded="true" />
+            <element signature="docComment;field#expert#0;class#Environment#0" expanded="true" />
+            <element signature="docComment;field#serverName#0;class#Environment#0" expanded="true" />
+            <element signature="docComment;method#getExpert#0;class#Environment#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="docComment;method#setExpert#0;class#Environment#0" expanded="true" />
+            <element signature="e#954#955#0" expanded="true" />
+            <element signature="e#981#982#0" expanded="true" />
+            <element signature="e#1192#1193#0" expanded="true" />
+            <element signature="e#1216#1217#0" expanded="true" />
+            <element signature="docComment;method#setServerName#0;class#Environment#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -580,6 +883,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -40,6 +40,7 @@ public class BacktestParser {
 	 * </p>
 	 * @param file the .htm file that is to be parsed
 	 * @return a new {@link Backtest} object that was parsed from the given file, or null if the file is incorrect.
+	 * @see com.metatradetools.backtest.models.Backtest
 	 */
 	public static Backtest parseFileToBacktest(File file) {
 		Backtest backtest = new Backtest();
