@@ -285,19 +285,4 @@ public class Trade {
 		this.balance = balance;
 	}
 	
-	@Override
-	public String toString () {
-		return "Trade{" +
-				"id=" + id +
-				", time=" + time +
-				", type='" + type + '\'' +
-				", order_id=" + order_id +
-				", size=" + size +
-				", price=" + price +
-				", stopLoss=" + stopLoss +
-				", takeProfit=" + takeProfit +
-				", profit=" + profit +
-				", balance=" + balance +
-				'}';
-	}
 }

@@ -51,12 +51,5 @@ public class Backtest {
 	public ArrayList<Trade> getTrades () {
 		return trades;
 	}
-	
-	@Override
-	public String toString () {
-		return "Backtest{" +
-				"summary=" + summary +
-				", trades=" + trades +
-				'}';
-	}
+
 }
