@@ -47,11 +47,14 @@ public class Inputs {
 	 */
 	private GregorianCalendar endDate = new GregorianCalendar(new SimpleTimeZone(3600000*2, "ForexUS", Calendar.MARCH, 2, Calendar.SUNDAY, 0, Calendar.NOVEMBER, 1, Calendar.SUNDAY, 3600000));
 	/**
-	 * The frequency of tick used, using descriptions
+	 * The frequency of tick used, i.e. the model of data sampling, using descriptions
 	 */
 	private String model;
 	/**
 	 * The parameters used in the expert advisor, as a string
+	 * <p>
+	 *     Note that ";" is used as a delimiter to separate between parameters
+	 * </p>
 	 */
 	private String parameters;
 	/**
@@ -63,66 +66,157 @@ public class Inputs {
 	 */
 	private String spread;
 	
+	/**
+	 * Returns the symbol of the instrument used in the strategy test
+	 * @return the symbol of the trading instrument used
+	 * @see #symbol
+	 */
 	public String getSymbol () {
 		return symbol;
 	}
 	
+	/**
+	 * Modifies the symbol of the trading instrument to the designated symbol
+	 * @param symbol the new symbol
+	 * @see #symbol
+	 * @see #getSymbol()
+	 */
 	public void setSymbol (String symbol) {
 		this.symbol = symbol;
 	}
 	
+	/**
+	 * Returns the time frame used for charts in the strategy test.
+	 * @return the time frame used in strategy test
+	 * @see #timeframe
+	 */
 	public String getTimeframe () {
 		return timeframe;
 	}
 	
+	/**
+	 * Modifies the time frame of the chart used in the strategy test to the designated time frame.
+	 * @param timeframe The new time frame of the chart
+	 * @see #timeframe
+	 * @see #getTimeframe()
+	 */
 	public void setTimeframe (String timeframe) {
 		this.timeframe = timeframe;
 	}
 	
+	/**
+	 * Returns the starting historical point of time of the strategy test.
+	 * @return the starting point of time of the strategy test
+	 * @see #startDate
+	 */
 	public GregorianCalendar getStartDate () {
 		return startDate;
 	}
 	
+	/**
+	 * Modifies the starting historical point of time the strategy test to the designated date and time.
+	 * @param startDate the new starting point
+	 * @see #startDate
+	 * @see #getStartDate()
+	 */
 	public void setStartDate (GregorianCalendar startDate) {
 		this.startDate = startDate;
 	}
 	
+	/**
+	 * Returns the ending historical point of time applied in the strategy test.
+	 * @return the end date of the strategy test
+	 * @see #endDate
+	 */
 	public GregorianCalendar getEndDate () {
 		return endDate;
 	}
 	
+	/**
+	 * Modifies the end data point of the strategy test to the specified date and time.
+	 * @param endDate the new end date
+	 * @see #endDate
+	 * @see #getEndDate()
+	 */
 	public void setEndDate (GregorianCalendar endDate) {
 		this.endDate = endDate;
 	}
 	
+	/**
+	 * Returns the model of data sampling used in the strategy test
+	 * @return the model
+	 * @see #model
+	 */
 	public String getModel () {
 		return model;
 	}
 	
+	/**
+	 * Modifies the model of data sampling used in the strategy test to the designated model.
+	 * @param model the new model of data sampling
+	 * @see #model
+	 * @see #getModel()
+	 */
 	public void setModel (String model) {
 		this.model = model;
 	}
 	
+	/**
+	 * Returns the parameters used for the expert advisor that is used in the strategy test.
+	 * <p>
+	 *     This method returns the settings used for the expert advisor in the strategy test.
+	 * </p>
+	 * @return all parameters as a single string
+	 * @see #parameters
+	 */
 	public String getParameters () {
 		return parameters;
 	}
 	
+	/**
+	 * Modifies the parameters to the specified String.
+	 * @param parameters the new parameters to be set to
+	 * @see #parameters
+	 * @see #getParameters()
+	 */
 	public void setParameters (String parameters) {
 		this.parameters = parameters;
 	}
 	
+	/**
+	 * Returns the initial account deposit used in the strategy test.
+	 * @return the account deposit when  initialized test
+	 * @see #initialDeposit
+	 */
 	public double getInitialDeposit () {
 		return initialDeposit;
 	}
 	
+	/**
+	 * Initialize the account deposit to the specified one.
+	 * @param initialDeposit the account deposit to be initialized
+	 * @see #initialDeposit
+	 * @see #getInitialDeposit()
+	 */
 	public void setInitialDeposit (double initialDeposit) {
 		this.initialDeposit = initialDeposit;
 	}
 	
+	/**
+	 * Returns the bid-ask spread of the underlying instrument used in the test, stored as a string.
+	 * @return the spread used in the test
+	 * @see #spread
+	 */
 	public String getSpread () {
 		return spread;
 	}
 	
+	/**
+	 * Sets the bid-ask spread of the strategy test to the specified string
+	 * @param spread the new bid-ask spread
+	 * @see #spread
+	 * @see #getSpread()
+	 */
 	public void setSpread (String spread) {
 		this.spread = spread;
 	}
