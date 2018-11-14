@@ -21,26 +21,35 @@ import java.beans.JavaBean;
 @JavaBean
 public class Result {
 	/**
-	 * The summary of the trades occur during the test.
+	 * The class that contains summary of the trades occur during the test.
 	 */
 	private final TradeSummary tradeSummary = new TradeSummary();
 	/**
-	 * The amount of profit and loss in the test.
+	 * The class that contains amount of profit and loss in the test.
 	 */
 	private final ProfitAndLoss profitAndLoss = new ProfitAndLoss();
 	/**
-	 * The drawdown numbers of the entire duration of strategy testing.
+	 * The class that contains drawdown numbers of the entire duration of strategy testing.
 	 */
 	private final Risks risks = new Risks();
 	/**
-	 * Minor results that is less likely to be used in analysis
+	 * The class that contains minor results that is less likely to be used in analysis
 	 */
 	private final Miscellaneous miscellaneous = new Miscellaneous();
 	
+	/**
+	 * Gets the trade summary of the test, such as the total trades, win rate.
+	 * @return the trade summary that this instance has
+	 * @see #tradeSummary
+	 */
 	public TradeSummary getTradeSummary () {
 		return tradeSummary;
 	}
 	
+	/**
+	 *  Gets the details of profits and losses.
+	 * @return the profit and losses that this instance has
+	 */
 	public ProfitAndLoss getProfitAndLoss () {
 		return profitAndLoss;
 	}
