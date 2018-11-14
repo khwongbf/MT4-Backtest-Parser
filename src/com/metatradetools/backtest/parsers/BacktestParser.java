@@ -11,6 +11,11 @@ import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -77,14 +82,14 @@ public class BacktestParser {
 							String timeframe = retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf(")")).trim();
 							String dates = retrievedString.substring(retrievedString.indexOf(")") + 1, retrievedString.lastIndexOf("(")).trim();
 							String startDateInStr = dates.split("-")[0].trim();
-							SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
-							Date startDate = dateFormat.parse(startDateInStr);
+							DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm");
+							LocalDateTime startDate = LocalDateTime.parse(startDateInStr,dateTimeFormatter);
 							String endDateInStr = dates.split("-")[1].trim();
-							Date endDate = dateFormat.parse(endDateInStr);
+							LocalDateTime endDate = LocalDateTime.parse(endDateInStr,dateTimeFormatter);
 							
 							backtest.getSummary().getInputs().setTimeframe(timeframe);
-							backtest.getSummary().getInputs().getStartDate().setTime(startDate);
-							backtest.getSummary().getInputs().getEndDate().setTime(endDate);
+							backtest.getSummary().getInputs().setStartDate(ZonedDateTime.ofInstant(startDate, ZoneOffset.ofHours(2), ZoneId.of("Europe/Nicosia")));
+							backtest.getSummary().getInputs().setEndDate(ZonedDateTime.ofInstant(endDate, ZoneOffset.ofHours(2), ZoneId.of("Europe/Nicosia")));
 							break;
 						case "Model":
 							backtest.getSummary().getInputs().setModel(retrievedString.substring(0, retrievedString.indexOf("(")));
@@ -255,7 +260,6 @@ public class BacktestParser {
 								break;
 						}
 					}
-					System.out.println("Adding trade #" + trade.getId());
 					backtest.getTrades().add(trade);
 				}
 			}

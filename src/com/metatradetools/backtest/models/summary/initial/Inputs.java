@@ -3,6 +3,7 @@ package com.metatradetools.backtest.models.summary.initial;
 import com.metatradetools.backtest.models.summary.BacktestSummary;
 
 import java.beans.JavaBean;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
@@ -41,11 +42,11 @@ public class Inputs {
 	/**
 	 * The starting date of the historical strategy test.
 	 */
-	private GregorianCalendar startDate = new GregorianCalendar(new SimpleTimeZone(3600000*2, "ForexUS", Calendar.MARCH, 2, Calendar.SUNDAY, 0, Calendar.NOVEMBER, 1, Calendar.SUNDAY, 3600000));
+	private ZonedDateTime startDate;
 	/**
 	 * The end date of the historical strategy test.
 	 */
-	private GregorianCalendar endDate = new GregorianCalendar(new SimpleTimeZone(3600000*2, "ForexUS", Calendar.MARCH, 2, Calendar.SUNDAY, 0, Calendar.NOVEMBER, 1, Calendar.SUNDAY, 3600000));
+	private ZonedDateTime endDate;
 	/**
 	 * The frequency of tick used, i.e. the model of data sampling, using descriptions
 	 */
@@ -109,7 +110,7 @@ public class Inputs {
 	 * @return the starting point of time of the strategy test
 	 * @see #startDate
 	 */
-	public GregorianCalendar getStartDate () {
+	public ZonedDateTime getStartDate () {
 		return startDate;
 	}
 	
@@ -119,7 +120,7 @@ public class Inputs {
 	 * @see #startDate
 	 * @see #getStartDate()
 	 */
-	public void setStartDate (GregorianCalendar startDate) {
+	public void setStartDate (ZonedDateTime startDate) {
 		this.startDate = startDate;
 	}
 	
@@ -128,7 +129,7 @@ public class Inputs {
 	 * @return the end date of the strategy test
 	 * @see #endDate
 	 */
-	public GregorianCalendar getEndDate () {
+	public ZonedDateTime getEndDate () {
 		return endDate;
 	}
 	
@@ -138,7 +139,7 @@ public class Inputs {
 	 * @see #endDate
 	 * @see #getEndDate()
 	 */
-	public void setEndDate (GregorianCalendar endDate) {
+	public void setEndDate (ZonedDateTime endDate) {
 		this.endDate = endDate;
 	}
 	
