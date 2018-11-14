@@ -38,7 +38,7 @@ public class Result {
 	private final Miscellaneous miscellaneous = new Miscellaneous();
 	
 	/**
-	 * Gets the trade summary of the test, such as the total trades, win rate.
+	 * Gets the trade summary of this test, such as the total trades, win rate.
 	 * @return the trade summary that this instance has
 	 * @see #tradeSummary
 	 */
@@ -47,17 +47,28 @@ public class Result {
 	}
 	
 	/**
-	 *  Gets the details of profits and losses.
+	 *  Gets the details of profits and losses of this test
 	 * @return the profit and losses that this instance has
+	 * @see #profitAndLoss
 	 */
 	public ProfitAndLoss getProfitAndLoss () {
 		return profitAndLoss;
 	}
-	
+
+    /**
+     * Gets the drawdown numbers of this strategy test.
+     * @return the instance that represents the drawdowns
+     * @see #risks
+     */
 	public Risks getRisks () {
 		return risks;
 	}
-	
+
+    /**
+     * Gets the minor details of the results of this strategy test.
+     * @return the instance that contain the minor details
+     * @see #miscellaneous
+     */
 	public Miscellaneous getMiscellaneous () {
 		return miscellaneous;
 	}
