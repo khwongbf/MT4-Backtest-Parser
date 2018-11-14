@@ -35,7 +35,7 @@ public class Backtest {
 	 * @return the summary of the report
 	 * @since 1.0
 	 * @see #summary
-	 * @see com.metatradetools.backtest.models.summary.BacktestSummary
+	 * @see BacktestSummary
 	 */
 	public BacktestSummary getSummary () {
 		return summary;
@@ -46,7 +46,7 @@ public class Backtest {
 	 * @return the chronological executions of trades in the report
 	 * @since 1.0
 	 * @see #trades
-	 * @see com.metatradetools.backtest.models.trades.Trade
+	 * @see Trade
 	 */
 	public ArrayList<Trade> getTrades () {
 		return trades;
