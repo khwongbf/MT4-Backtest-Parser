@@ -104,7 +104,7 @@ public class Modelling {
 	 * Sets the number of chart errors due to mismatched to the specified integer
 	 * @param mismatchedChartErrors the new number of errors
 	 * @see #mismatchedChartErrors
-	 * @see #getMismatchedChartErrors() 
+	 * @see #getMismatchedChartErrors()
 	 */
 	public void setMismatchedChartErrors (int mismatchedChartErrors) {
 		this.mismatchedChartErrors = mismatchedChartErrors;
