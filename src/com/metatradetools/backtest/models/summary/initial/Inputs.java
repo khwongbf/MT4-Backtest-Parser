@@ -3,10 +3,8 @@ package com.metatradetools.backtest.models.summary.initial;
 import com.metatradetools.backtest.models.summary.BacktestSummary;
 
 import java.beans.JavaBean;
+import java.math.BigDecimal;
 import java.time.ZonedDateTime;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.SimpleTimeZone;
 
 /**
  *  Represents the variables inputted by the user in the strategy test.
@@ -61,7 +59,7 @@ public class Inputs {
 	/**
 	 * The initial deposit of the account for the strategy testing on historic data.
 	 */
-	private double initialDeposit;
+	private BigDecimal initialDeposit;
 	/**
 	 * The bid-ask spread used in the strategy test
 	 */
@@ -189,7 +187,7 @@ public class Inputs {
 	 * @return the account deposit when  initialized test
 	 * @see #initialDeposit
 	 */
-	public double getInitialDeposit () {
+	public BigDecimal getInitialDeposit () {
 		return initialDeposit;
 	}
 	
@@ -199,7 +197,7 @@ public class Inputs {
 	 * @see #initialDeposit
 	 * @see #getInitialDeposit()
 	 */
-	public void setInitialDeposit (double initialDeposit) {
+	public void setInitialDeposit (BigDecimal initialDeposit) {
 		this.initialDeposit = initialDeposit;
 	}
 	

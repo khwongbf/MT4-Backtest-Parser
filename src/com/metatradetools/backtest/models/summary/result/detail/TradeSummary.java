@@ -1,5 +1,7 @@
 package com.metatradetools.backtest.models.summary.result.detail;
 
+import java.math.BigDecimal;
+
 public class TradeSummary {
 	private int totalTrades;
 	private int shortPositions;
@@ -7,10 +9,10 @@ public class TradeSummary {
 	private int profitTrades;
 	private int lossTrades;
 	
-	private double shortPositionsWinRate;
-	private double longPositionsWinRate;
-	private double winRate;
-	private double lossRate;
+	private BigDecimal shortPositionsWinRate;
+	private BigDecimal longPositionsWinRate;
+	private BigDecimal winRate;
+	private BigDecimal lossRate;
 	
 	public int getTotalTrades () {
 		return totalTrades;
@@ -52,35 +54,35 @@ public class TradeSummary {
 		this.lossTrades = lossTrades;
 	}
 	
-	public double getShortPositionsWinRate () {
+	public BigDecimal getShortPositionsWinRate () {
 		return shortPositionsWinRate;
 	}
 	
-	public void setShortPositionsWinRate (double shortPositionsWinRate) {
+	public void setShortPositionsWinRate (BigDecimal shortPositionsWinRate) {
 		this.shortPositionsWinRate = shortPositionsWinRate;
 	}
 	
-	public double getLongPositionsWinRate () {
+	public BigDecimal getLongPositionsWinRate () {
 		return longPositionsWinRate;
 	}
 	
-	public void setLongPositionsWinRate (double longPositionsWinRate) {
+	public void setLongPositionsWinRate (BigDecimal longPositionsWinRate) {
 		this.longPositionsWinRate = longPositionsWinRate;
 	}
 	
-	public double getWinRate () {
+	public BigDecimal getWinRate () {
 		return winRate;
 	}
 	
-	public void setWinRate (double winRate) {
+	public void setWinRate (BigDecimal winRate) {
 		this.winRate = winRate;
 	}
 	
-	public double getLossRate () {
+	public BigDecimal getLossRate () {
 		return lossRate;
 	}
 	
-	public void setLossRate (double lossRate) {
+	public void setLossRate (BigDecimal lossRate) {
 		this.lossRate = lossRate;
 	}
 }

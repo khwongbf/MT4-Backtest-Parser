@@ -3,8 +3,8 @@ package com.metatradetools.backtest.models.trades;
 import org.jetbrains.annotations.Nullable;
 
 import java.beans.JavaBean;
+import java.math.BigDecimal;
 import java.time.ZonedDateTime;
-import java.util.Date;
 
 /**
  *  Represents a trade in the strategy tester report.
@@ -40,36 +40,36 @@ public class Trade {
 	/**
 	 * The size of the order, in number of lots.
 	 */
-	private double size;
+	private BigDecimal size;
 	
 	/**
 	 * The price of the underlying instrument at the moment the execution took place.
 	 */
-	private double price;
+	private BigDecimal price;
 	
 	/**
 	 * The stop loss price appointed by the execution.
 	 */
 	@Nullable
-	private Double stopLoss;
+	private BigDecimal stopLoss;
 	
 	/**
 	 * The take profit price appointed by the execution.
 	 */
 	@Nullable
-	private Double takeProfit;
+	private BigDecimal takeProfit;
 	
 	/**
 	 * The profit made for the current execution, if the type of execution is SL,TP, close or close at stop.
 	 */
 	@Nullable
-	private Double profit;
+	private BigDecimal profit;
 	
 	/**
 	 * The balance of the account after adding the profit for the current execution, null if {@link this#profit} is null.
 	 */
 	@Nullable
-	private Double balance;
+	private BigDecimal balance;
 	
 	/**
 	 * Returns the numeric sequence of this execution of trade.
@@ -173,7 +173,7 @@ public class Trade {
 	 * </p>
 	 * @return lot size of the concerned trade
 	 */
-	public double getSize () {
+	public BigDecimal getSize () {
 		return size;
 	}
 	
@@ -183,7 +183,7 @@ public class Trade {
 	 * @see #size
 	 * @see #getSize()
 	 */
-	public void setSize (double size) {
+	public void setSize (BigDecimal size) {
 		this.size = size;
 	}
 	
@@ -192,7 +192,7 @@ public class Trade {
 	 * @return the price when the execution took place
 	 * @see #price
 	 */
-	public double getPrice () {
+	public BigDecimal getPrice () {
 		return price;
 	}
 	
@@ -202,7 +202,7 @@ public class Trade {
 	 * @see #price
 	 * @see #getPrice()
 	 */
-	public void setPrice (double price) {
+	public void setPrice (BigDecimal price) {
 		this.price = price;
 	}
 	
@@ -211,7 +211,7 @@ public class Trade {
 	 * @return the stop loss price of the underlying trade as a {@link Double} object, null if a stop loss is not set
 	 * @see #stopLoss
 	 */
-	public Double getStopLoss () {
+	public BigDecimal getStopLoss () {
 		return stopLoss;
 	}
 	
@@ -221,7 +221,7 @@ public class Trade {
 	 * @see #stopLoss
 	 * @see #getStopLoss()
 	 */
-	public void setStopLoss (@Nullable Double stopLoss) {
+	public void setStopLoss (BigDecimal stopLoss) {
 		this.stopLoss = stopLoss;
 	}
 	
@@ -230,7 +230,7 @@ public class Trade {
 	 * @return the take profit price of the underlying trade as a {@link Double} object, null if a take profit is not set.
 	 * @see #takeProfit
 	 */
-	public Double getTakeProfit () {
+	public BigDecimal getTakeProfit () {
 		return takeProfit;
 	}
 	
@@ -240,7 +240,7 @@ public class Trade {
 	 * @see #takeProfit
 	 * @see #getTakeProfit()
 	 */
-	public void setTakeProfit (@Nullable Double takeProfit) {
+	public void setTakeProfit (BigDecimal takeProfit) {
 		this.takeProfit = takeProfit;
 	}
 	
@@ -249,7 +249,7 @@ public class Trade {
 	 * @return the profit or loss of the execution, null if there is no profit or loss
 	 * @see #profit
 	 */
-	public Double getProfit () {
+	public BigDecimal getProfit () {
 		return profit;
 	}
 	
@@ -259,7 +259,7 @@ public class Trade {
 	 * @see #profit
 	 * @see #getProfit()
 	 */
-	public void setProfit (@Nullable Double profit) {
+	public void setProfit (BigDecimal profit) {
 		this.profit = profit;
 	}
 	
@@ -271,7 +271,7 @@ public class Trade {
 	 * @see #getProfit()
 	 * @see #getBalance()
 	 */
-	public Double getBalance () {
+	public BigDecimal getBalance () {
 		return balance;
 	}
 	
@@ -281,8 +281,8 @@ public class Trade {
 	 * @see #balance
 	 * @see #getBalance()
 	 */
-	public void setBalance (@Nullable Double balance) {
+	public void setBalance (BigDecimal balance) {
 		this.balance = balance;
 	}
-	
+
 }

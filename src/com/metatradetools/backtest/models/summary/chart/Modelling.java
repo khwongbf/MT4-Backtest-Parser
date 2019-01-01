@@ -1,6 +1,7 @@
 package com.metatradetools.backtest.models.summary.chart;
 
 import java.beans.JavaBean;
+import java.math.BigDecimal;
 
 /**
  * Represents the data used in the strategy test and the data integrity.
@@ -25,7 +26,7 @@ public class Modelling {
 	 *     The "%" symbol is removed in storing into this field.
 	 * </p>
 	 */
-	private double modellingQuality;
+	private BigDecimal modellingQuality;
 	/**
 	 * The number of chart errors of the data used.
 	 */
@@ -77,7 +78,7 @@ public class Modelling {
 	 * @return data quality as a percentage
 	 * @see #modellingQuality
 	 */
-	public double getModellingQuality () {
+	public BigDecimal getModellingQuality () {
 		return modellingQuality;
 	}
 	
@@ -87,7 +88,7 @@ public class Modelling {
 	 * @see #modellingQuality
 	 * @see #getModellingQuality()
 	 */
-	public void setModellingQuality (double modellingQuality) {
+	public void setModellingQuality (BigDecimal modellingQuality) {
 		this.modellingQuality = modellingQuality;
 	}
 	

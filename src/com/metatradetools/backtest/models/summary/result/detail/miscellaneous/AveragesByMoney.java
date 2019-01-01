@@ -1,22 +1,24 @@
 package com.metatradetools.backtest.models.summary.result.detail.miscellaneous;
 
+import java.math.BigDecimal;
+
 public class AveragesByMoney {
-	private double profitTrade;
-	private double lossTrade;
+	private BigDecimal profitTrade;
+	private BigDecimal lossTrade;
 	
-	public double getProfitTrade () {
+	public BigDecimal getProfitTrade () {
 		return profitTrade;
 	}
 	
-	public void setProfitTrade (double profitTrade) {
+	public void setProfitTrade (BigDecimal profitTrade) {
 		this.profitTrade = profitTrade;
 	}
 	
-	public double getLossTrade () {
+	public BigDecimal getLossTrade () {
 		return lossTrade;
 	}
 	
-	public void setLossTrade (double lossTrade) {
+	public void setLossTrade (BigDecimal lossTrade) {
 		this.lossTrade = lossTrade;
 	}
 }

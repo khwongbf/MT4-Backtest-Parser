@@ -1,16 +1,18 @@
 package com.metatradetools.backtest.models.summary.result.detail.miscellaneous;
 
+import java.math.BigDecimal;
+
 public class MaximumsByMoney {
-	private double consecutiveProfit;
+	private BigDecimal consecutiveProfit;
 	private int consecutiveCountOfWins;
-	private double consecutiveLoss;
+	private BigDecimal consecutiveLoss;
 	private int consecutiveCountOfLosses;
 	
-	public double getConsecutiveProfit () {
+	public BigDecimal getConsecutiveProfit () {
 		return consecutiveProfit;
 	}
 	
-	public void setConsecutiveProfit (double consecutiveProfit) {
+	public void setConsecutiveProfit (BigDecimal consecutiveProfit) {
 		this.consecutiveProfit = consecutiveProfit;
 	}
 	
@@ -22,11 +24,11 @@ public class MaximumsByMoney {
 		this.consecutiveCountOfWins = consecutiveCountOfWins;
 	}
 	
-	public double getConsecutiveLoss () {
+	public BigDecimal getConsecutiveLoss () {
 		return consecutiveLoss;
 	}
 	
-	public void setConsecutiveLoss (double consecutiveLoss) {
+	public void setConsecutiveLoss (BigDecimal consecutiveLoss) {
 		this.consecutiveLoss = consecutiveLoss;
 	}
 	

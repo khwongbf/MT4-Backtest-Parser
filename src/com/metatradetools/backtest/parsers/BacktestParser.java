@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.ParseException;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
@@ -75,12 +75,15 @@ public class BacktestParser {
 				if (element.hasText() && element.nextElementSibling() != null && element.nextElementSibling().hasText()) {
 					// Temporarily stores a string retrieved in a element to set fields in the object
 					retrievedString = element.nextElementSibling().text().trim();
+					final String bracketedRetrievedSubstring = retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf(")"));
+					final String bracketedRetrievedPercentageSubstring = retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf("%"));
+					final BigDecimal nonBracketedBigDecimal = new BigDecimal(retrievedString.substring(0, retrievedString.indexOf("(")).trim());
 					switch (element.text().trim()) {
 						case "Symbol":
 							backtest.getSummary().getInputs().setSymbol(retrievedString.substring(0, 6));
 							break;
 						case "Period":
-							String timeframe = retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf(")")).trim();
+							String timeframe = bracketedRetrievedSubstring.trim();
 							String dates = retrievedString.substring(retrievedString.indexOf(")") + 1, retrievedString.lastIndexOf("(")).trim();
 							String startDateInStr = dates.split("-")[0].trim();
 
@@ -105,91 +108,92 @@ public class BacktestParser {
 							backtest.getSummary().getModelling().setTicksModelled(Integer.parseInt(retrievedString));
 							break;
 						case "Modelling quality":
-							backtest.getSummary().getModelling().setModellingQuality(Double.parseDouble(retrievedString.replace("%", "")));
+							var currentPercentage = new BigDecimal(retrievedString.substring(0,retrievedString.indexOf('%')));
+							backtest.getSummary().getModelling().setModellingQuality(currentPercentage);
 							break;
 						case "Mismatched charts errors":
 							backtest.getSummary().getModelling().setMismatchedChartErrors(Integer.parseInt(retrievedString));
 							break;
 						case "Initial deposit":
-							backtest.getSummary().getInputs().setInitialDeposit(Double.parseDouble(retrievedString));
+							backtest.getSummary().getInputs().setInitialDeposit(new BigDecimal(retrievedString));
 							break;
 						case "Spread":
 							backtest.getSummary().getInputs().setSpread(retrievedString);
 							break;
 						case "Total net profit":
-							backtest.getSummary().getResult().getProfitAndLoss().setTotalNetProfit(Double.parseDouble(retrievedString));
+							backtest.getSummary().getResult().getProfitAndLoss().setTotalNetProfit(new BigDecimal(retrievedString));
 							break;
 						case "Gross profit":
-							backtest.getSummary().getResult().getProfitAndLoss().setGrossProfit(Double.parseDouble(retrievedString));
+							backtest.getSummary().getResult().getProfitAndLoss().setGrossProfit(new BigDecimal(retrievedString));
 							break;
 						case "Gross loss":
-							backtest.getSummary().getResult().getProfitAndLoss().setGrossLoss(Double.parseDouble(retrievedString));
+							backtest.getSummary().getResult().getProfitAndLoss().setGrossLoss(new BigDecimal(retrievedString));
 							break;
 						case "Profit factor":
-							backtest.getSummary().getResult().getProfitAndLoss().setProfitFactor(Double.parseDouble(retrievedString));
+							backtest.getSummary().getResult().getProfitAndLoss().setProfitFactor(new BigDecimal(retrievedString));
 							break;
 						case "Expected payoff":
-							backtest.getSummary().getResult().getProfitAndLoss().setExpectedPayoff(Double.parseDouble(retrievedString));
+							backtest.getSummary().getResult().getProfitAndLoss().setExpectedPayoff(new BigDecimal(retrievedString));
 							break;
 						case "Absolute drawdown":
-							backtest.getSummary().getResult().getRisks().setAbsoluteDrawdown(Double.parseDouble(retrievedString));
+							backtest.getSummary().getResult().getRisks().setAbsoluteDrawdown(new BigDecimal(retrievedString));
 							break;
 						case "Maximal drawdown":
-							backtest.getSummary().getResult().getRisks().setMaximalDrawdownAbsolute(Double.parseDouble(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getRisks().setMaximalDrawdownPercentage(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf("%")).trim()));
+							backtest.getSummary().getResult().getRisks().setMaximalDrawdownAbsolute(nonBracketedBigDecimal);
+							backtest.getSummary().getResult().getRisks().setMaximalDrawdownPercentage(new BigDecimal(bracketedRetrievedPercentageSubstring.trim()));
 							break;
 						case "Relative drawdown":
-							backtest.getSummary().getResult().getRisks().setRelativeDrawdownPercentage(Double.parseDouble(retrievedString.substring(0, retrievedString.indexOf("%")).trim()));
-							backtest.getSummary().getResult().getRisks().setRelativeDrawdownAbsolute(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf(")")).trim()));
+							backtest.getSummary().getResult().getRisks().setRelativeDrawdownPercentage(new BigDecimal(retrievedString.substring(0, retrievedString.indexOf("%")).trim()));
+							backtest.getSummary().getResult().getRisks().setRelativeDrawdownAbsolute(new BigDecimal(bracketedRetrievedSubstring.trim()));
 							break;
 						case "Total trades":
 							backtest.getSummary().getResult().getTradeSummary().setTotalTrades(Integer.parseInt(retrievedString));
 							break;
 						case "Short positions (won %)":
 							backtest.getSummary().getResult().getTradeSummary().setShortPositions(Integer.parseInt(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getTradeSummary().setShortPositionsWinRate(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf("%")).trim()));
+							backtest.getSummary().getResult().getTradeSummary().setShortPositionsWinRate(new BigDecimal(bracketedRetrievedPercentageSubstring.trim()));
 							break;
 						case "Long positions (won %)":
 							backtest.getSummary().getResult().getTradeSummary().setLongPositions(Integer.parseInt(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getTradeSummary().setLongPositionsWinRate(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf("%")).trim()));
+							backtest.getSummary().getResult().getTradeSummary().setLongPositionsWinRate(new BigDecimal(bracketedRetrievedPercentageSubstring.trim()));
 							break;
 						case "Profit trades (% of total)":
 							backtest.getSummary().getResult().getTradeSummary().setProfitTrades(Integer.parseInt(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getTradeSummary().setWinRate(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf("%")).trim()));
+							backtest.getSummary().getResult().getTradeSummary().setWinRate(new BigDecimal(bracketedRetrievedPercentageSubstring.trim()));
 							break;
 						case "Loss trades (% of total)":
 							backtest.getSummary().getResult().getTradeSummary().setLossTrades(Integer.parseInt(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getTradeSummary().setLossRate(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(") + 1, retrievedString.indexOf("%")).trim()));
+							backtest.getSummary().getResult().getTradeSummary().setLossRate(new BigDecimal(bracketedRetrievedPercentageSubstring.trim()));
 							break;
 						case "profit trade":
 							if (element.parent().child(0).text().trim().equals("Largest")) {
-								backtest.getSummary().getResult().getMiscellaneous().getLargestByMoney().setProfitTrade(Double.parseDouble(retrievedString));
+								backtest.getSummary().getResult().getMiscellaneous().getLargestByMoney().setProfitTrade(new BigDecimal(retrievedString));
 							} else if (element.parent().child(0).text().trim().equals("Average")) {
-								backtest.getSummary().getResult().getMiscellaneous().getAveragesByMoney().setProfitTrade(Double.parseDouble(retrievedString));
+								backtest.getSummary().getResult().getMiscellaneous().getAveragesByMoney().setProfitTrade(new BigDecimal(retrievedString));
 							}
 							break;
 						case "loss trade":
 							if (element.parent().child(0).text().trim().equals("Largest")) {
-								backtest.getSummary().getResult().getMiscellaneous().getLargestByMoney().setLossTrade(Double.parseDouble(retrievedString));
+								backtest.getSummary().getResult().getMiscellaneous().getLargestByMoney().setLossTrade(new BigDecimal(retrievedString));
 							} else if (element.parent().child(0).text().trim().equals("Average")) {
-								backtest.getSummary().getResult().getMiscellaneous().getAveragesByMoney().setLossTrade(Double.parseDouble(retrievedString));
+								backtest.getSummary().getResult().getMiscellaneous().getAveragesByMoney().setLossTrade(new BigDecimal(retrievedString));
 							}
 							break;
 						case "consecutive wins (profit in money)":
 							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByCount().setConsecutiveWins(Integer.parseInt(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByCount().setConsecutiveProfitInMoney(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(")+1 , retrievedString.indexOf(")")).trim()));
+							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByCount().setConsecutiveProfitInMoney(new BigDecimal(bracketedRetrievedSubstring.trim()));
 							break;
 						case "consecutive losses (loss in money)":
 							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByCount().setConsecutiveLosses(Integer.parseInt(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByCount().setConsecutiveLossInMoney(Double.parseDouble(retrievedString.substring(retrievedString.indexOf("(")+1 , retrievedString.indexOf(")")).trim()));
+							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByCount().setConsecutiveLossInMoney(new BigDecimal(bracketedRetrievedSubstring.trim()));
 							break;
 						case "consecutive profit (count of wins)":
-							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveProfit(Double.parseDouble(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveCountOfWins(Integer.parseInt(retrievedString.substring(retrievedString.indexOf("(")+1 , retrievedString.indexOf(")")).trim()));
+							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveProfit(nonBracketedBigDecimal);
+							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveCountOfWins(Integer.parseInt(bracketedRetrievedSubstring.trim()));
 							break;
 						case "consecutive loss (count of losses)":
-							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveLoss(Double.parseDouble(retrievedString.substring(0, retrievedString.indexOf("(")).trim()));
-							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveCountOfLosses(Integer.parseInt(retrievedString.substring(retrievedString.indexOf("(")+1 , retrievedString.indexOf(")")).trim()));
+							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveLoss(nonBracketedBigDecimal);
+							backtest.getSummary().getResult().getMiscellaneous().getMaximumsByMoney().setConsecutiveCountOfLosses(Integer.parseInt(bracketedRetrievedSubstring.trim()));
 							break;
 						case "consecutive wins":
 							backtest.getSummary().getResult().getMiscellaneous().getAveragesByCount().setConsecutiveWins(Integer.parseInt(retrievedString));
@@ -229,23 +233,23 @@ public class BacktestParser {
 								trade.setOrder_id(Integer.parseInt(processingString));
 								break;
 							case 4:
-								trade.setSize(Double.parseDouble(processingString));
+								trade.setSize(new BigDecimal(processingString));
 								break;
 							case 5:
-								trade.setPrice(Double.parseDouble(processingString));
+								trade.setPrice(new BigDecimal(processingString));
 								break;
 							case 6:
 								if (processingString.equals("0.00000")){
 									trade.setStopLoss(null);
 								} else{
-									trade.setStopLoss(Double.valueOf(processingString));
+									trade.setStopLoss(new BigDecimal(processingString));
 								}
 								break;
 							case 7:
 								if (processingString.equals("0.00000")){
 									trade.setTakeProfit(null);
 								}else{
-									trade.setTakeProfit(Double.valueOf(processingString));
+									trade.setTakeProfit(new BigDecimal(processingString));
 								}
 								break;
 							case 8:
@@ -253,11 +257,11 @@ public class BacktestParser {
 									trade.setProfit(null);
 									trade.setBalance(null);
 								}else{
-									trade.setProfit(Double.valueOf(processingString));
+									trade.setProfit(new BigDecimal(processingString));
 								}
 								break;
 							case 9:
-								trade.setBalance(Double.valueOf(processingString));
+								trade.setBalance(new BigDecimal(processingString));
 								break;
 						}
 					}

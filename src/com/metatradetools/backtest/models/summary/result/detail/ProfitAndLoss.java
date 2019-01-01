@@ -1,49 +1,51 @@
 package com.metatradetools.backtest.models.summary.result.detail;
 
+import java.math.BigDecimal;
+
 public class ProfitAndLoss {
-	private double totalNetProfit;
-	private double grossProfit;
-	private double grossLoss;
-	private double profitFactor;
-	private double expectedPayoff;
+	private BigDecimal totalNetProfit;
+	private BigDecimal grossProfit;
+	private BigDecimal grossLoss;
+	private BigDecimal profitFactor;
+	private BigDecimal expectedPayoff;
 	
-	public double getTotalNetProfit () {
+	public BigDecimal getTotalNetProfit () {
 		return totalNetProfit;
 	}
 	
-	public void setTotalNetProfit (double totalNetProfit) {
+	public void setTotalNetProfit (BigDecimal totalNetProfit) {
 		this.totalNetProfit = totalNetProfit;
 	}
 	
-	public double getGrossProfit () {
+	public BigDecimal getGrossProfit () {
 		return grossProfit;
 	}
 	
-	public void setGrossProfit (double grossProfit) {
+	public void setGrossProfit (BigDecimal grossProfit) {
 		this.grossProfit = grossProfit;
 	}
 	
-	public double getGrossLoss () {
+	public BigDecimal getGrossLoss () {
 		return grossLoss;
 	}
 	
-	public void setGrossLoss (double grossLoss) {
+	public void setGrossLoss (BigDecimal grossLoss) {
 		this.grossLoss = grossLoss;
 	}
 	
-	public double getProfitFactor () {
+	public BigDecimal getProfitFactor () {
 		return profitFactor;
 	}
 	
-	public void setProfitFactor (double profitFactor) {
+	public void setProfitFactor (BigDecimal profitFactor) {
 		this.profitFactor = profitFactor;
 	}
 	
-	public double getExpectedPayoff () {
+	public BigDecimal getExpectedPayoff () {
 		return expectedPayoff;
 	}
 	
-	public void setExpectedPayoff (double expectedPayoff) {
+	public void setExpectedPayoff (BigDecimal expectedPayoff) {
 		this.expectedPayoff = expectedPayoff;
 	}
 }

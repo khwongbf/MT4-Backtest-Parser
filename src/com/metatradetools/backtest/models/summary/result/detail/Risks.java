@@ -1,49 +1,51 @@
 package com.metatradetools.backtest.models.summary.result.detail;
 
+import java.math.BigDecimal;
+
 public class Risks {
-	private double absoluteDrawdown;
-	private double maximalDrawdownAbsolute;
-	private double maximalDrawdownPercentage;
-	private double relativeDrawdownAbsolute;
-	private double relativeDrawdownPercentage;
+	private BigDecimal absoluteDrawdown;
+	private BigDecimal maximalDrawdownAbsolute;
+	private BigDecimal maximalDrawdownPercentage;
+	private BigDecimal relativeDrawdownAbsolute;
+	private BigDecimal relativeDrawdownPercentage;
 	
-	public double getAbsoluteDrawdown () {
+	public BigDecimal getAbsoluteDrawdown () {
 		return absoluteDrawdown;
 	}
 	
-	public void setAbsoluteDrawdown (double absoluteDrawdown) {
+	public void setAbsoluteDrawdown (BigDecimal absoluteDrawdown) {
 		this.absoluteDrawdown = absoluteDrawdown;
 	}
 	
-	public double getMaximalDrawdownAbsolute () {
+	public BigDecimal getMaximalDrawdownAbsolute () {
 		return maximalDrawdownAbsolute;
 	}
 	
-	public void setMaximalDrawdownAbsolute (double maximalDrawdownAbsolute) {
+	public void setMaximalDrawdownAbsolute (BigDecimal maximalDrawdownAbsolute) {
 		this.maximalDrawdownAbsolute = maximalDrawdownAbsolute;
 	}
 	
-	public double getMaximalDrawdownPercentage () {
+	public BigDecimal getMaximalDrawdownPercentage () {
 		return maximalDrawdownPercentage;
 	}
 	
-	public void setMaximalDrawdownPercentage (double maximalDrawdownPercentage) {
+	public void setMaximalDrawdownPercentage (BigDecimal maximalDrawdownPercentage) {
 		this.maximalDrawdownPercentage = maximalDrawdownPercentage;
 	}
 	
-	public double getRelativeDrawdownAbsolute () {
+	public BigDecimal getRelativeDrawdownAbsolute () {
 		return relativeDrawdownAbsolute;
 	}
 	
-	public void setRelativeDrawdownAbsolute (double relativeDrawdownAbsolute) {
+	public void setRelativeDrawdownAbsolute (BigDecimal relativeDrawdownAbsolute) {
 		this.relativeDrawdownAbsolute = relativeDrawdownAbsolute;
 	}
 	
-	public double getRelativeDrawdownPercentage () {
+	public BigDecimal getRelativeDrawdownPercentage () {
 		return relativeDrawdownPercentage;
 	}
 	
-	public void setRelativeDrawdownPercentage (double relativeDrawdownPercentage) {
+	public void setRelativeDrawdownPercentage (BigDecimal relativeDrawdownPercentage) {
 		this.relativeDrawdownPercentage = relativeDrawdownPercentage;
 	}
 }
